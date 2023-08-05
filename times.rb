@@ -1,0 +1,1 @@
+11.times { |count| puts "Posição => #{count}" }
