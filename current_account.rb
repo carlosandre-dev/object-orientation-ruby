@@ -16,4 +16,13 @@ class CurrentAccount < Account
     end
   end
 
+  def transfer(destination_account, value)
+    if (balance + limit) >= value 
+      withdraw(value)
+      destination_account.deposit(value)
+    else
+      puts "Não é possível transferir! Saldo insuficiente."
+    end
+  end
+
 end 
