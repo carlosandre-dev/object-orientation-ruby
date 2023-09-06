@@ -1,5 +1,6 @@
 class Startup
   def self.initializing
+    system 'clear'
     print "Inicializando."
     4.times do |i|
       sleep 1
