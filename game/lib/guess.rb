@@ -1,9 +1,13 @@
+require_relative 'startup'
+require_relative 'raffle_number'
+
 class Guess
     attr_reader :number
     attr_reader :winer
 
     def initialize
-        @number = Random.rand(1..10)
+        Startup.initializing
+        @number = RaffleNUmber.raffle
         @winer = false
     end
 
@@ -17,12 +21,4 @@ class Guess
             return "Número muito baixo"
         end
     end
-end
-
-round = Guess.new
-
-until round.winer do
-    puts "Digite um número: "
-    number = gets.to_i
-    puts round.try_guess(number)
 end
